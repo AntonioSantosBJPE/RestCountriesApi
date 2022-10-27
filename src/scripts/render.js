@@ -52,7 +52,7 @@ export async function renderOnlyCardCountry(element){
         
         const div = document.createElement("div")
         li.appendChild(div)
-        div.classList = "infos-card-countries flex flex-col justify-between"
+        div.classList = "infos-card-countries flex flex-col justify-around"
 
             const population = document.createElement("div")
             div.appendChild(population)
