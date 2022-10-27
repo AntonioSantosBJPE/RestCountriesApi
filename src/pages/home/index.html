@@ -4,10 +4,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../styles/globalStyles.css">
+    <link rel="stylesheet" href="../../styles/flex.css">
+    <link rel="stylesheet" href="../../styles/colors.css">
+    <link rel="stylesheet" href="../../styles/fonts.css">
+    <link rel="stylesheet" href="../../styles/buttons.css">
+    <link rel="stylesheet" href="../../styles/inputs.css">
+    <link rel="stylesheet" href="./index.css">
+
     <title>Home</title>
 </head>
 <body>
-    <H1>teste </H1>
+    <header class="header ">
+        <div class="container flex items-center justify-between">
+            <h1>Where is the world?</h1>
+            <button class="button-darkmode"><img class="img-darkmode" src="../../assets/img/btn-monn.png" alt=""><span class="text-button-darkmode">Dark Mode</span> </button>
+        </div>
+        
+    </header>
+    <main>
+        <nav class="nav container flex items-center justify-between">
+            <div class="box-input-filter-country flex items-center justify-center">
+                <input class="input-filter-country" type="text" placeholder="Pesquise um país...">
+                <button class="button-filter-country"><img src="../../assets/img/img-search.png" alt=""></button>
+            </div>
+            
+            <div class="box-filter-region flex flex-col items-center justify-center">
+                <h2>Filtrar por Continente</h2>
+                <select name="filterByRegion" id="filterByRegion" class="filterByRegion">
+                    <option value="none">Região</option>
+                    <option value="Africa">África</option>
+                    <option value="Americas">América</option>
+                    <option value="Asia">Ásia</option>
+                    <option value="Europe">Europa</option>
+                    <option value="Oceania">Oceania</option>
+                </select>
+              
+            </div>
+
+            <div class="box-filter-currency flex flex-col items-center justify-center">
+                <h2>Filtrar por moeda</h2>
+                <select name="filterByCurrency" id="filterByCurrency" class="filterByCurrency">
+                    <option value="none">Moeda</option>
+                    <option value="dollar">Dólar</option>
+                    <option value="euro">Euro</option>
+                    <option value="yen">Yen</option>
+                    <option value="gbp">Libra</option>
+                    <option value="peso">Peso</option>
+                    <option value="real">Real</option>
+                </select>
+              
+            </div>
+        </nav>
+
+        <section class="">
+            <div class="box-pages container flex items-center justify-center">
+                <button class="button-page-left"><img src="../../assets/img/btn-previus.png" alt=""></button>
+                <input type="text" name="" id="input-text-page">
+                <button class="button-page-right"><img src="../../assets/img/btn-next.png" alt=""></button>
+            </div>
+            
+            <ul class="list-countries container flex justify-between">                    
+            </ul>
+           
+        </section>
+
+    </main>
     <script type="module" src="./index.js"></script>
 </body>
 </html>

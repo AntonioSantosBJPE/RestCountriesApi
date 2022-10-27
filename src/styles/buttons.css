@@ -1,0 +1,68 @@
+.button-filter-country{
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: white;
+    padding: 5px;
+}
+
+.button-filter-country:hover{
+ cursor: pointer;
+ background-color: whitesmoke;
+}
+
+.button-filter-country > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 70%;
+}
+
+/* ============================================== */
+
+.button-page-right, .button-page-left{
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+}
+
+.button-page-right:hover, .button-page-left :hover{
+   cursor: pointer;
+   background-color: white;
+   border-radius: 100%;
+}
+
+
+.button-page-right > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.button-page-left > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ============================================== */
+.button-darkmode{
+    /* width: 80px; */
+    height: 40px;
+    background-color: var(--color-grey-4);
+    border: none;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+    .button-darkmode:hover{
+        cursor: pointer;
+        background-color: var(--color-grey-3);
+    }
+.img-darkmode{
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+}
