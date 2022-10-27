@@ -52,7 +52,7 @@ margin-bottom: 40px;
 
     .card-countries:hover{
         cursor: pointer;
-        border: 1px solid black;
+        border: 1px solid var(--color-grey-7);
     }
 
 .img-card-countries{
