@@ -16,9 +16,12 @@
     <title>Home</title>
 </head>
 <body>
-    <header class="header container flex items-center justify-between ">
-        <h1>Where is the world</h1>
-        <button>Dark Mode</button>
+    <header class="header ">
+        <div class="container flex items-center justify-between">
+            <h1>Where is the world?</h1>
+            <button class="button-darkmode"><img class="img-darkmode" src="../../assets/img/btn-monn.png" alt=""><span class="text-button-darkmode">Dark Mode</span> </button>
+        </div>
+        
     </header>
     <main>
         <nav class="nav container flex items-center justify-between">
@@ -56,14 +59,15 @@
         </nav>
 
         <section class="">
+            <div class="box-pages container flex items-center justify-center">
+                <button class="button-page-left"><img src="../../assets/img/btn-previus.png" alt=""></button>
+                <input type="text" name="" id="input-text-page">
+                <button class="button-page-right"><img src="../../assets/img/btn-next.png" alt=""></button>
+            </div>
+            
             <ul class="list-countries container flex justify-between">                    
             </ul>
-            <div class="box-pages container flex items-center justify-center">
-                <button class="button-page-left">Left</button>
-                <p class="text-page">1</p>
-                <input type="text" name="" id="input-text-page">
-                <button class="button-page-right">Right</button>
-            </div>
+           
         </section>
 
     </main>

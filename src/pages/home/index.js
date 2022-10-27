@@ -6,10 +6,10 @@ import {renderListCountries,renderOnlyCardCountry} from "../../scripts/render.js
 
 const btnPageRight = document.querySelector(".button-page-right")
 const btnPageLeft = document.querySelector(".button-page-left")
-const textPage = document.querySelector(".text-page")
 const inputTextPage = document.querySelector("#input-text-page")
-
-
+const btnDarkMode = document.querySelector(".button-darkmode")
+const imgDarkMode = document.querySelector(".img-darkmode")
+const textDarkMode = document.querySelector(".text-button-darkmode")
 
 window.addEventListener("DOMContentLoaded",async (e)=>{
     const dateNameCountries = await apiFilterAllNamesOfCountries()
@@ -26,7 +26,6 @@ window.addEventListener("DOMContentLoaded",async (e)=>{
             pages--
             localStorage.setItem("@Country:Page",JSON.stringify(pages))
             renderListCountries()
-            textPage.innerText = pages.toString()
             inputTextPage.value = pages
         }
         
@@ -38,7 +37,6 @@ window.addEventListener("DOMContentLoaded",async (e)=>{
             pages++
             localStorage.setItem("@Country:Page",JSON.stringify(pages))
             renderListCountries()
-            textPage.innerText = pages.toString()
             inputTextPage.value = pages
         }
     })
@@ -50,10 +48,22 @@ window.addEventListener("DOMContentLoaded",async (e)=>{
              
                 localStorage.setItem("@Country:Page",JSON.stringify(value))
                 renderListCountries()
-                textPage.innerText = value.toString()
             } else{
               
             }
         }
     })
+
+    btnDarkMode.addEventListener("click",(e)=>{
+    
+        if (textDarkMode.innerText==="Dark Mode"){
+            textDarkMode.innerText = "Light Mode"
+            imgDarkMode.src = "../../assets/img/btn-sun.png"
+        }else{
+            textDarkMode.innerText = "Dark Mode"
+            imgDarkMode.src = "../../assets/img/btn-monn.png"
+        }
+        
+    })
+
 })

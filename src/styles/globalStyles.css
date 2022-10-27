@@ -17,8 +17,6 @@
   --color-grey-4:  #e9ecef;
   --color-grey-5:  #f1f3f5;
   --color-grey-6:  #ffffff;
-  --color-grey-7:  #ffffff;
-  --color-grey-8:  #ffffff;
   --color-opacity-1: rgba(0, 0, 0, 0.7);
 
   --radius-10: 10px;
@@ -39,7 +37,8 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: var(--color-grey-5);
+  background-color: var(--color-grey-4);
+  color: var(--color-grey-1);
 }
 
 li{
