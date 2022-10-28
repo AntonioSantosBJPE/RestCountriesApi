@@ -1,7 +1,3 @@
-
-
-
-
 export async function apiGetCountriesByAll(){
     const data = await fetch("https://restcountries.com/v3.1/all")
     const dataJson = await data.json()

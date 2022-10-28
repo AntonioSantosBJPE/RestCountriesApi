@@ -1,7 +1,7 @@
 import {apiGetCountriesByAll,apiGetCountriesByPartialName} from "../../scripts/api.js"
 import {apiGetCountriesByFullName,apiGetCountriesByRegion} from "../../scripts/api.js"
 import {apiGetCountriesByCurrency,apiFilterAllNamesOfCountries} from "../../scripts/api.js"
-import {renderListCountries,renderOnlyCardCountry} from "../../scripts/render.js"
+import {renderListCountries,renderOnlyCardCountry,renderSearchCountryByPartialName} from "../../scripts/render.js"
 
 
 const btnPageRight = document.querySelector(".button-page-right")
@@ -11,6 +11,9 @@ const btnDarkMode = document.querySelector(".button-darkmode")
 const imgDarkMode = document.querySelector(".img-darkmode")
 const textDarkMode = document.querySelector(".text-button-darkmode")
 const htmlDarkMode = document.querySelector("html")
+const btnSearchCountries = document.querySelector(".button-filter-country")
+const inputSearchCountries = document.querySelector(".input-filter-country")
+const btnClearFilters = document.querySelector(".button-clear-filters")
 
 window.addEventListener("DOMContentLoaded",async (e)=>{
     
@@ -83,6 +86,25 @@ window.addEventListener("DOMContentLoaded",async (e)=>{
             localStorage.setItem("@Country:Darkmode",JSON.stringify("false"))
         }
         
+    })
+
+
+    btnSearchCountries.addEventListener("click",(e)=>{
+        if (inputSearchCountries.value.length>=3){
+            console.log(inputSearchCountries.value.length)
+            renderSearchCountryByPartialName(inputSearchCountries.value)
+        }
+        
+    })
+
+    btnClearFilters.addEventListener("click",(e)=>{
+        
+        const ul = document.querySelector(".list-countries")
+        ul.innerHTML =""
+
+        localStorage.setItem("@Country:Page",JSON.stringify("1"))
+        inputTextPage.value = "1"
+        renderListCountries()
     })
 
 })
