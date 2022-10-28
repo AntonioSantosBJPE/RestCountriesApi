@@ -19,7 +19,16 @@
     <header class="header ">
         <div class="container flex items-center justify-between">
             <h1>Where is the world?</h1>
-            <button class="button-darkmode"><img class="img-darkmode" src="../../assets/img/btn-monn.png" alt=""><span class="text-button-darkmode">Dark Mode</span> </button>
+           
+            <div class="header-box-buttons flex ">
+
+                <button class="button-clear-filters">Limpar Filtros</button>
+
+                <button class="button-darkmode"><img class="img-darkmode" 
+                src="../../assets/img/btn-monn.png" alt="">
+                <span class="text-button-darkmode">Dark Mode</span> </button>
+             
+            </div>
         </div>
         
     </header>
@@ -28,6 +37,7 @@
             <div class="box-input-filter-country flex items-center justify-center">
                 <input class="input-filter-country" type="text" placeholder="Pesquise um país...">
                 <button class="button-filter-country"><img src="../../assets/img/img-search.png" alt=""></button>
+                <p class="search-error">Nenhum país foi encontrado!</p>
             </div>
             
             <div class="box-filter-region flex flex-col items-center justify-center">
