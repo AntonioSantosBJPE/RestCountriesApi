@@ -105,6 +105,7 @@ window.addEventListener("DOMContentLoaded",async (e)=>{
         inputTextPage.value = "1"
 
         boxPages.style.display= "flex"
+        inputSearchCountries.value = ""
 
         renderListCountries()
     })
