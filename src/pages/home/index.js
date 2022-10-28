@@ -1,7 +1,5 @@
-import {apiGetCountriesByAll,apiGetCountriesByPartialName} from "../../scripts/api.js"
-import {apiGetCountriesByFullName,apiGetCountriesByRegion} from "../../scripts/api.js"
-import {apiGetCountriesByCurrency,apiFilterAllNamesOfCountries} from "../../scripts/api.js"
-import {renderListCountries,renderOnlyCardCountry,renderSearchCountryByPartialName} from "../../scripts/render.js"
+import {apiFilterAllNamesOfCountries} from "../../scripts/api.js"
+import {renderListCountries,renderSearchCountryByPartialName} from "../../scripts/render.js"
 
 
 const btnPageRight = document.querySelector(".button-page-right")
@@ -14,6 +12,7 @@ const htmlDarkMode = document.querySelector("html")
 const btnSearchCountries = document.querySelector(".button-filter-country")
 const inputSearchCountries = document.querySelector(".input-filter-country")
 const btnClearFilters = document.querySelector(".button-clear-filters")
+const boxPages = document.querySelector(".box-pages")
 
 window.addEventListener("DOMContentLoaded",async (e)=>{
     
@@ -104,6 +103,9 @@ window.addEventListener("DOMContentLoaded",async (e)=>{
 
         localStorage.setItem("@Country:Page",JSON.stringify("1"))
         inputTextPage.value = "1"
+
+        boxPages.style.display= "flex"
+
         renderListCountries()
     })
 
