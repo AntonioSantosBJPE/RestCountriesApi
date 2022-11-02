@@ -54,7 +54,9 @@ export async function renderListCountries(){
 }
 
 export async function renderOnlyCardCountry(element){
-   
+    
+    const numberFormat = new Intl.NumberFormat()
+
     const ul = document.querySelector(".list-countries")
     const li = document.createElement("li")
     ul.appendChild(li)
@@ -85,7 +87,8 @@ export async function renderOnlyCardCountry(element){
                 
                 const spanPopulationRight = document.createElement("span")
                 population.appendChild(spanPopulationRight)
-                spanPopulationRight.innerText = element.population
+                spanPopulationRight.innerText = numberFormat.format(element.population)
+                
                 
                 
             const continent = document.createElement("div")
@@ -111,6 +114,13 @@ export async function renderOnlyCardCountry(element){
                 const spancapitalRight = document.createElement("span")
                 capital.appendChild(spancapitalRight)
                 spancapitalRight.innerText = element.capital
+
+
+
+        li.addEventListener("click",(e)=>{
+            localStorage.setItem("@Country:DetailedInformation",JSON.stringify(element))
+            window.location.replace("../country/index.html")
+        })
                             
 }
 

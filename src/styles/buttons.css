@@ -71,14 +71,14 @@
 }
 
 /* ============================================== */
-.button-clear-filters{
+.button-clear-filters, .button-home{
     height: 40px;
     background-color: var(--color-grey-5);
     border: none;
     padding: 10px 20px;
     color: var(--color-grey-1);
 }
-    .button-clear-filters:hover{
+    .button-clear-filters:hover,.button-home:hover{
         cursor: pointer;
         background-color: var(--color-grey-6);
         border: 1px solid var(--color-grey-5);
