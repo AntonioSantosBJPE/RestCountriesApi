@@ -28,13 +28,24 @@ window.addEventListener("DOMContentLoaded",async (e)=>{
         localStorage.setItem("@Country:Darkmode",JSON.stringify("false"))
     }
     
+    if (localStorage.getItem("@Country:NamesOfCountries")){
+
+    }else{
+        const dateNameCountries = await apiFilterAllNamesOfCountries()
+        localStorage.setItem("@Country:NamesOfCountries",JSON.stringify(dateNameCountries))
+    }
     
-    const dateNameCountries = await apiFilterAllNamesOfCountries()
-    localStorage.setItem("@Country:NamesOfCountries",JSON.stringify(dateNameCountries))
+   
+    if(localStorage.getItem("@Country:Page")){
+        inputTextPage.value = JSON.parse(localStorage.getItem("@Country:Page"))
+        renderListCountries()
+    }else{
+        localStorage.setItem("@Country:Page",JSON.stringify("1"))
+        inputTextPage.value = "1"
+        renderListCountries()
+    }
     
-    localStorage.setItem("@Country:Page",JSON.stringify("1"))
-    inputTextPage.value = "1"
-    renderListCountries()
+   
     
     btnPageLeft.addEventListener("click",(e)=>{
         let pages= Number(JSON.parse(localStorage.getItem("@Country:Page")))
@@ -50,7 +61,7 @@ window.addEventListener("DOMContentLoaded",async (e)=>{
     btnPageRight.addEventListener("click",(e)=>{
         let pages= Number(JSON.parse(localStorage.getItem("@Country:Page")))
         
-        if(pages<29){
+        if(pages<28){
             pages++
             localStorage.setItem("@Country:Page",JSON.stringify(pages))
             renderListCountries()
@@ -65,8 +76,14 @@ window.addEventListener("DOMContentLoaded",async (e)=>{
              
                 localStorage.setItem("@Country:Page",JSON.stringify(value))
                 renderListCountries()
-            } else{
-              
+            } else if(value<=0){
+                inputTextPage.value = "1"
+                localStorage.setItem("@Country:Page","1")
+                renderListCountries()
+            } else if(value>=29){
+                inputTextPage.value = "28"
+                localStorage.setItem("@Country:Page","28")
+                renderListCountries() 
             }
         }
     })

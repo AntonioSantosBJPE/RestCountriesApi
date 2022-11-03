@@ -125,3 +125,62 @@ export async function renderOnlyCardCountry(element){
 }
 
 
+export async function renderPageCountry(){
+    
+    const numberFormat = new Intl.NumberFormat()
+    const infosCountry = JSON.parse(localStorage.getItem("@Country:DetailedInformation"))
+   
+    const nativeName = Object.values(infosCountry.name.nativeName)[0].common
+    const languages = Object.values(infosCountry.languages).join(", ")
+    
+    let borderCountries = ""   
+        if(infosCountry.borders){
+            borderCountries = infosCountry.borders.join(", ")
+        }else{
+            borderCountries = "The country has no border"
+        }
+   
+    
+    let currencies = ""
+    Object.values(infosCountry.currencies).forEach((element)=>{
+        currencies += `${element.name}, `
+    })
+    currencies = currencies.substring(0, currencies.length-2)
+   
+    
+    const main = document.querySelector(".main")
+
+    main.insertAdjacentHTML("beforeend",`
+    <section class="section-infos-country container flex flex-col justify-between items-center">
+             <h2 class="country-name">${infosCountry.name.common}</h2>    
+                
+            <div class="box flex"> 
+                <div class="box-img-country">
+                    <figure>
+                        <img src=${infosCountry.flags.svg} alt="" >
+                    </figure>
+                </div >
+
+
+                <div class="box-infos-country flex flex-col justify-between">
+                    
+                        <p><strong>Native Name: </strong>${nativeName}</p>
+                        <p><strong>Population: </strong>${numberFormat.format(infosCountry.population)}</p>
+                        <p><strong>Region: </strong>${infosCountry.region}</p>
+                        <p><strong>Sub Region: </strong>${infosCountry.subregion}</p>
+                        <p><strong>Capital: </strong>${infosCountry.capital}</p>
+                        <p><strong>Top Level Domain: </strong>${infosCountry.tld[0]}</p>
+                        <p><strong>Curencies: </strong>${currencies}</p>
+                        <p><strong>Languagens: </strong>${languages}</p>
+                        <p><strong>Border Countries: </strong>${borderCountries}</p>
+                </div>
+
+            </div>
+
+        </section>
+    
+    `)
+
+
+
+}
