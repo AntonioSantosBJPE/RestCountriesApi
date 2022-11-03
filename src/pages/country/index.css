@@ -14,9 +14,55 @@
     gap: 20px;
 }
 /* ============================================== */
+.section-infos-country{
+    margin-top: 100px;
+    /* height: 400px; */
+    width: 100%;
+    gap: 50px;
+}
 
+.country-name{
+    font-size: 50px;
+}
+
+.box{
+    width: 100%;
+    height: 400px;
+    gap: 10%;
+}
+    .box-img-country{
+        width: 45%;
+        height: 100%;
+        /* border: 1px solid white; */
+    }
+        .box-img-country > figure {
+            width: 100%;
+            height: 100%;   
+        }
+            .box-img-country > figure > img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+    .box-infos-country{
+        width: 45%;
+        height: 100%;        
+    }
+        .box-infos-country > p{
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--color-grey-2);
+        }
+        .box-infos-country > p > strong {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--color-grey-1);
+        }
+      
 /* ============================================== */
 
+   
 /* ============================================== */
 
 

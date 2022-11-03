@@ -1,3 +1,5 @@
+import {renderPageCountry} from "../../scripts/render.js"
+
 const btnDarkMode = document.querySelector(".button-darkmode")
 const imgDarkMode = document.querySelector(".img-darkmode")
 const textDarkMode = document.querySelector(".text-button-darkmode")
@@ -8,9 +10,10 @@ const btnHome = document.querySelector(".button-home")
 
 
 
-
-
 window.addEventListener("DOMContentLoaded",async (e)=>{
+
+
+    renderPageCountry()
 
     if(localStorage.getItem("@Country:Darkmode")){
         
